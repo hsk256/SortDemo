@@ -5,15 +5,20 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Main {
     public static void main(String[] args) {
-        int len = 10;
-        int range = 30;
+        int len = 1000000;
+        int range = 30000;
         long start =  System.currentTimeMillis();
         int[] mergeArr = generateArr(len,range);
         MergeSort.mergeSort(mergeArr);
         long end = System.currentTimeMillis();
         System.out.println("归并排序时间:"+(end-start));
-        printArray(mergeArr);
+//        printArray(mergeArr);
 
+        long start1=  System.currentTimeMillis();
+        QuickSort.quickSort(generateArr(len,range));
+        long end1 = System.currentTimeMillis();
+        System.out.println("快速排序时间:"+(end1-start1));
+//        printArray(mergeArr);
     }
 
     public static int[] generateArr(int len,int range) {
