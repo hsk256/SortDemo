@@ -1,4 +1,3 @@
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by littlekang on 16/4/1.
@@ -28,6 +27,13 @@ public class Main {
         long end2 = System.currentTimeMillis();
         System.out.println("冒泡排序时间:"+(end2-start2));
 //        printArray(bubbleArr);
+
+        int[] selectArr = generateArr(len,range);
+        long start3=  System.currentTimeMillis();
+        SelectSort.sort(selectArr);
+        long end3 = System.currentTimeMillis();
+        System.out.println("选择排序时间:"+(end3-start3));
+        //printArray(selectArr);
     }
 
     public static int[] generateArr(int len,int range) {
