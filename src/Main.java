@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int len = 100000;
-        int range = 30000;
+        int len = 10;
+        int range = 30;
         
         int[] mergeArr = generateArr(len,range);
         long start =  System.currentTimeMillis();
@@ -50,6 +50,13 @@ public class Main {
         long end5 = System.currentTimeMillis();
         System.out.println("希尔排序时间:"+(end5-start5));
         //printArray(selectArr);
+
+        int[] heapArr = generateArr(len,range);
+        long start6=  System.currentTimeMillis();
+        HeapSort.heapSort(heapArr);
+        long end6 = System.currentTimeMillis();
+        System.out.println("堆排序时间:"+(end6-start6));
+        printArray(heapArr);
 
 
     }
